@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
+// import { ProductService } from './product/product.service';
+
 
 @NgModule({
   declarations: [
