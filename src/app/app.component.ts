@@ -1,25 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from './product/product.class';
-import { ProductService } from './product/product.service';
+import { RouterModule } from '@angular/router';
+
+// import { Product } from './product/product.class';
+// import { ProductService } from './product/product.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ProductService]
+  // providers: [ProductService]
 })
 
 export class AppComponent implements OnInit {
-  products: Product[];
-  selectedProduct: Product;
-  constructor(private productService: ProductService) { }
-  getProducts(): void {
-    this.productService.getProducts().then(products => this.products = products);
-  }
+  constructor() { }
   ngOnInit(): void {
-    this.getProducts();
-  }
-  onSelect(product: Product): void {
-    this.selectedProduct = product;
   }
 }
