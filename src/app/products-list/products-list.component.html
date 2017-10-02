@@ -1,7 +1,13 @@
 <h1>Welcome To Massturant</h1>
 <div>
   <!-- <ul *ngFor="let product of products"> -->
-    <app-product *ngFor="let product of products" [selectedProduct]="selectedProduct" [onSelect]="onSelect" [product]="product"></app-product>
+  <app-product
+    style="width: 10px"
+    *ngFor="let product of products"
+    [selectedProduct]="selectedProduct"
+    [onSelect]="onSelect"
+    [product]="product">
+  </app-product>
     <!-- <li (click)="onSelect(product)" [class.selected]="product === selectedProduct">
       {{product.name}}
     </li> -->

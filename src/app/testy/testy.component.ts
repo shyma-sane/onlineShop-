@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../product/product.class';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-testy',
