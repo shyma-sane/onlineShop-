@@ -9,6 +9,8 @@ import { ProductService } from './product/product.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { TestyComponent } from './testy/testy.component';
+import {CartComponent} from './cart/cart.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,12 @@ import { TestyComponent } from './testy/testy.component';
     ProductComponent,
     NavbarComponent,
     ProductsListComponent,
-    TestyComponent
+    TestyComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     RouterModule.forRoot([
       {
@@ -29,7 +33,8 @@ import { TestyComponent } from './testy/testy.component';
     ])
   ],
   providers: [ProductService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 
 

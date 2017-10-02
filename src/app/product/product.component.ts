@@ -10,11 +10,14 @@ import { Product } from './product.class';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  @Input() product: Product;
-  @Input() onSelect;
-  @Input() selectedProduct;
+  @Input() product: any;
+  @Input() onSelect: any;
+  @Input() selectedProduct: any;
+  public cart = [];
   constructor () { }
   ngOnInit() {
   }
+
+  
 
 }

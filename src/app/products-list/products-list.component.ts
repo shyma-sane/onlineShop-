@@ -9,16 +9,16 @@ import { ProductService } from '../product/product.service';
 })
 
 export class ProductsListComponent implements OnInit {
-  products: Product[];
-  selectedProduct: Product;
+  products;
+  selectedProduct;
   constructor(private productService: ProductService) { }
   getProducts(): void {
-    this.productService.getProducts().then(products => this.products = products);
+    this.productService.getProducts().subscribe(products => this.products = products);
   }
   ngOnInit(): void {
     this.getProducts();
   }
-  onSelect(product: Product): void {
+  onSelect(product): void {
     this.selectedProduct = product;
   }
 }
