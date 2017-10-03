@@ -25,35 +25,35 @@ export class CartComponent {
   public totalQuantity: number;
   public cartSubscription: Subscription;
   products;
-  cart=[];
+  cart;
   i;
+  
 
   constructor(private productService:ProductService) {}
-
+  
   removeProduct(product) {
     this.cart.splice(this.i,1)
   }
 
-  checkout() {
-    alert('Sorry! Checkout will be coming soon!')
-  }
+  emptyCart() {
+    this.cart = [];
+ }
+
+  
 
   getTotalPrice() {
-    let totalCost: Array<number> = []
-    let quantity: Array<number> = []
-    let intPrice: number
-    let intQuantity: number
-    this.cart.forEach((item, i) => {
-      intPrice = parseInt(item.price)
-      intQuantity = parseInt(item.quantity)
-      totalCost.push(intPrice)
-      quantity.push(intQuantity)
+    let price = [];
+    let amount = [];
+    let cost = []
+    for (let i = 0; i < this.cart.length; i++){
+      if()
+    }
     })
 
-    this.totalPrice = totalCost.reduce((acc, item) => {
+    this.price = cost.reduce((acc, item) => {
       return acc += item
     }, 0)
-    this.totalQuantity = quantity.reduce((acc, item) => {
+    this.quantity = quantity.reduce((acc, item) => {
       return acc += item
     }, 0)
   }
@@ -71,6 +71,7 @@ export class CartComponent {
       this.products = products;
       this.getTotalPrice()
     })
+    this.cart = this.productService.getCart();
   }
 
   ngOnDestroy() {

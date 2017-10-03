@@ -7,17 +7,23 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ProductService {
+  public cart = [];
   constructor(private http: Http) { }
 
-  public cart: Array<any>;
   getProducts(){
     return this.http.get('http://localhost:3000/api/products')
         .map(res => res.json());
+  }
+
+getCart() {
+  return this.cart;
 }
 
-AddToCart(product){
-  this.cart.push(product)
+addToCart(product: Product) {
+  this.getCart().push(product)
 }
+
+
 
   // getProducts(): Promise<Product[]> {
   //   return Promise.resolve(products);
